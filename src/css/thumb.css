@@ -1,0 +1,96 @@
+/* Wrapper for the preview grid */
+.thumb-container {
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  scroll-behavior: smooth;
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+  gap: 7vw; /* space between items */
+  justify-items: center; /* center each item horizontally */
+  max-height: 12.9vw;
+  min-height: 12.9vw;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+.thumb-scroll-container::-webkit-scrollbar {
+    width: 8px; /* width of scrollbar */
+}
+
+.thumb-scroll-container::-webkit-scrollbar-track {
+    background: transparent; /* track is invisible */
+}
+
+.thumb-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); /* visible handle */
+    border-radius: 4px;
+}
+
+/* Firefox */
+.thumb-scroll-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+    /* thumb color, track color */
+}
+
+.thumb-title {
+  font-style: italic;
+  font-family: "Craftopia Stars";
+  margin: 1.5rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+}
+/* Thumbnail images */
+.thumb-small {
+    width: 100%;
+    aspect-ratio: 16/9;
+    padding: 2%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1.7px);
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    cursor: zoom-in;
+    transition: transform 0.18s ease, border 0.18s ease;
+}
+
+/* Fullscreen overlay */
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(1.7px);
+  display: grid;
+  place-items: center;
+  z-index: 9999; /* Ensures it's above App.jsx and all containers */
+  padding: 30px;
+}
+
+/* Zoomed image */
+.zoom-img {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 14px;
+  border: 3px solid white;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.65);
+}
+
+/* Close button */
+.zoom-close {
+  position: fixed;
+  top: 25px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10000;
+  transition: opacity 0.2s ease;
+}
+
+.zoom-close:hover {
+  opacity: 0.75;
+}

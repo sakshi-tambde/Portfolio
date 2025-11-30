@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Craftopia Stars";
+    src: url("../assets/fonts/CraftopiaStars.ttf") format("truetype");
+}
+
+#main-body{
+    display: flex;
+    flex-direction: row;
+}
+
+#test {
+  margin-top: 5%;
+  margin-left: 12%;
+  font-family: 'Craftopia Stars';
+  font-size: clamp(50px, 7vw, 90px);
+  width: fit-content;
+  animation: test 1.5s ease-in-out infinite alternate;
+}
+
+@media(max-width: 900px){
+  #test{
+      font-size: 6vw;
+  }
+}
+
+@keyframes test {
+  from {
+    text-shadow: none;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff,
+                 0 0 30px #fff,
+                 0 0 40px #fff,
+                 0 0 50px #fff,
+                 0 0 60px #fff,
+                 0 0 70px #fff,
+                 0 0 80px #fff;
+  }
+}
+
+@-webkit-keyframes test {
+  from {
+    text-shadow: none;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff,
+                 0 0 30px #fff,
+                 0 0 40px #fff,
+                 0 0 50px #fff,
+                 0 0 60px #fff,
+                 0 0 70px #fff,
+                 0 0 80px #fff;
+  }
+}
+
+
+#image-cont{
+    margin: 5%;
+    position: relative;
+    height: 13.5vw;
+    width: 13.5vw;
+}
+
+#image-id{
+    position: absolute;
+    background-image: url('../assets/ID_2.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 13.5vw;
+    min-width: 13.5vw;
+    max-width: 13.5vw;
+    max-height: 13.5vw;
+    border-radius: 250px;
+}
+
+#quali{
+  justify-self: center;
+  font-family: 'Craftopia Stars';
+  font-size: 1vw;
+}

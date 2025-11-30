@@ -1,0 +1,208 @@
+:root{
+    --margin-var: 7px;
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
+
+#site{
+    display: grid;
+    height: 100dvh;
+    place-items: center;
+}
+
+.nav-bar{
+    border: 0.02px solid white;
+    border-radius: 17px;
+    backdrop-filter: blur(1.7px);
+    background-color: rgba(255, 255, 255, 0.05);
+    display: grid;
+    grid-template-rows: 1fr auto; 
+    min-width: 55vw;
+    max-width: 55vw;
+    max-height: 50vw;
+    min-height: 29.1vw;
+    padding-bottom: 2.3%; 
+}
+
+@media(max-width: 900px){
+    .nav-bar{
+        min-width: 50%;
+    }
+}
+
+.nav-bar ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;   
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-bar ul li{
+    padding: 5px;
+    margin: var(--margin-var);
+    cursor: pointer;
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    font-size: larger;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.nav-bar ul li a:visited{
+    color: white;    
+}
+
+.nav-bar ul li a:active{
+    color: red;
+}
+
+#menu{
+    margin-left: 14.5%;
+    max-width: 70%;
+    display: flex;
+    justify-content:space-evenly;
+    padding: 0; 
+}
+
+#my-outlet{
+    margin: var(--margin-var)
+}
+
+.ai{
+    background-image: url('../assets/AI.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 4vw;
+    min-width: 4vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+}
+
+.title-music{
+    background-image: url('../assets/music-note.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 4vw;
+    min-width: 4vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+}
+
+.myself{
+    background-image: url('../assets/myself.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 4vw;
+    min-width: 4vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 32%;
+    gap: 7vw;
+}
+
+.thumb{
+    background-image: url('../assets/play.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 4vw;
+    min-width: 4vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+}
+
+.poster{
+    background-image: url('../assets/poster.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 3.5vw;
+    min-width: 3.5vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+}
+
+.credit{
+    background-image: url('../assets/credit.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 3.5vw;
+    min-width: 3.5vw;
+    max-width: 2vw;
+    max-height: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7vw;
+}
+
+.ai-label{
+    padding-top: 8%;
+    position: absolute;
+    font-size: 1.4vw;
+    color: white;
+    pointer-events: none;
+}
+
+.myself-label {
+    padding-top: 8%;
+    position: absolute;
+    font-size: 1.4vw;
+    color: white;
+    pointer-events: none;
+}
+
+.thumb-label {
+    padding-top: 8%;
+    position: absolute;
+    font-size: 1.4vw;
+    color: white;
+    pointer-events: none;
+}
+
+.poster-label {
+    padding-top: 8%;
+    position: absolute;
+    font-size: 1.4vw;
+    color: white;
+    pointer-events: none;
+}
+
+.credit-label {
+    padding-top: 8%;
+    position: absolute;
+    font-size: 1.4vw;
+    color: white;
+    pointer-events: none;
+}
