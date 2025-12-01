@@ -13,6 +13,7 @@ export default function Credit() {
                 <li> <span className="thumb" style={{marginLeft: "0"}}></span> <a href="https://www.flaticon.com/free-icons/thumbnail" target="_blank" title="thumbnail icons">Thumbnail icons created by Prashu Rapol - Flaticon</a></li>
                 <li> <span className="poster" style={{marginLeft: "0"}}></span> <a href="https://www.flaticon.com/free-icons/poster" target="_blank" title="poster icons">Poster icons created by Superarticons - Flaticon</a></li>
                 <li> <span className="credit" style={{marginLeft: "0"}}></span> <a href="https://www.flaticon.com/free-icons/credit" target="_blank" title="credit icons">Credit icons created by Freepik - Flaticon</a></li>
+                <li><span className="title-music" style={{marginLeft: "0"}}></span><a href="https://www.flaticon.com/free-icons/music-note" target="_blank" title="music note icons">Music note icons created by Freepik - Flaticon</a></li>
                 <h3 id="att">Other owners of work</h3>
                 <li id="special"> <a href="https://www.behance.net/manthanartschool" target="_blank" title="manthanArtSchool">Manthan Art School</a></li>
               </ul>

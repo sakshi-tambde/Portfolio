@@ -5,6 +5,9 @@ import "../css/thumb.css";
 export default function Thumbnail() {
   const [zoomSrc, setZoomSrc] = useState(null);
 
+  const thumbImages = import.meta.glob("../assets/Data/Thumbnail/thumb_small_*.png", { eager: true });
+  const thumbLarge = import.meta.glob("../assets/Data/Thumbnail/thumb_*.png", { eager: true });
+
   const openZoom = (src) => {
     setZoomSrc(src);
     document.body.style.overflow = "hidden"; // disable background scroll
@@ -21,13 +24,13 @@ export default function Thumbnail() {
       <div className="thumb-scroll-container"> 
       <div className="thumb-container">  
         {/* Images */}
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+        {Object.values(thumbImages).map((img, index) => (
           <img
-            key={i}
+            key={index}
             className="thumb-small"
-            src={`/Data/Thumbnail/thumb_small_${i}.png`}
-            alt={`AI Image ${i}`}
-            onClick={() => openZoom(`/Data/Thumbnail/thumb_${i}.jpg`)}
+            src={img.default}
+            alt={`Thumb Image ${index}`}
+            onClick={() => openZoom(Object.values(thumbLarge)[index].default)}
           />
         ))}
       </div>

@@ -5,6 +5,10 @@ import "../css/poster.css";
 export default function Thumbnail() {
   const [zoomSrc, setZoomSrc] = useState(null);
 
+  const posImages = import.meta.glob("../assets/Data/Posters/poster_small_*.png", { eager: true });
+  const posLarge = import.meta.glob("../assets/Data/Posters/poster_*.png", { eager: true });
+
+
   const openZoom = (src) => {
     setZoomSrc(src);
     document.body.style.overflow = "hidden"; // disable background scroll
@@ -21,13 +25,13 @@ export default function Thumbnail() {
       <div className="poster-scroll-container"> 
       <div className="poster-container">  
         {/* Images */}
-        {[1, 2, 3, 4, 5, 6].map((i) => (
+        {Object.values(posImages).map((img, index) => (
           <img
-            key={i}
+            key={index}
             className="poster-small"
-            src={`/Data/Posters/poster_small_${i}.png`}
-            alt={`AI Image ${i}`}
-            onClick={() => openZoom(`/Data/Posters/poster_${i}.png`)}
+            src={img.default}
+            alt={`Poster Image ${index}`}
+            onClick={() => openZoom(Object.values(posLarge)[index].default)}
           />
         ))}
       </div>

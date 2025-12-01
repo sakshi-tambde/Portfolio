@@ -5,6 +5,10 @@ import "../css/ai.css";
 export default function AI() {
   const [zoomSrc, setZoomSrc] = useState(null);
 
+  const aiImages = import.meta.glob("../assets/Data/AI/ai_small_*.png", { eager: true });
+  const aiLarge = import.meta.glob("../assets/Data/AI/ai_*.png", { eager: true });
+  const avideos = import.meta.glob("../assets/Data/AIvideo/*.mp4", { eager: true });
+
   const openZoom = (src) => {
     setZoomSrc(src);
     document.body.style.overflow = "hidden"; // disable background scroll
@@ -21,24 +25,19 @@ export default function AI() {
       <div className="ai-scroll-container"> 
       <div className="ai-container">  
         {/* Images */}
-        {[1, 2, 3, 4, 5, 6, 7].map((i) => (
+        {Object.values(aiImages).map((img, index) => (
           <img
-            key={i}
+            key={index}
             className="ai-small"
-            src={`../assets/Data/AI/ai_small_${i}.png`}
-            alt={`AI Image ${i}`}
-            onClick={() => openZoom(`../assets/Data/AI/ai_${i}.png`)}
+            src={img.default}
+            alt={`AI Image ${index}`}
+            onClick={() => openZoom(Object.values(aiLarge)[index].default)}
           />
         ))}
 
         {/* Videos */}
-        {[1].map((i) => (
-          <video
-            key={`vid-${i}`}
-            className="ai-video"
-            src={`../assets/Data/AIvideo/ai_vid_${i}.mp4`}
-            controls
-          />
+        {Object.values(avideos).map((vid, index) => (
+          <video key={index} className="ai-video" src={vid.default} controls />
         ))}
       </div>
       </div>
